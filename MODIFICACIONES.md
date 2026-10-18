@@ -22,7 +22,5 @@ sus propios avisos y licencias.
 - Compilación portable: dependencias fijadas, generación local de WebUI, cabeceras JavaScript correspondientes y empaquetado con checksums.
 - Manual e instrucciones en español y flujo de compilación para GitHub Actions.
 
-Este aviso resume la adaptación; el código fuente completo publicado en el
-repositorio es la referencia de los cambios. La compilación distribuida se
-corresponde con las entradas enumeradas en RELEASE_SOURCE_MANIFEST.json.
+Este aviso identifica las principales modificaciones respecto a Bruce. Los detalles de implementación se encuentran en el código fuente correspondiente a esta versión.
 
