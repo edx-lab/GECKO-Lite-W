@@ -44,7 +44,4 @@ El buzzer utiliza las funciones de tonos existentes en GPIO 38.
 `/boot.gif` en la raíz de la SD sustituye a la intro de Bruce. Conviene usar
 un GIF del tamaño de la orientación elegida; el reproductor no lo escala.
 
-Validación realizada el 18 de octubre de 2026: compilación limpia correcta en
-Windows, auditoría estática y pruebas de los scripts de preparación y empaquetado.
-Las compilaciones de Linux en Actions y la validación física completa no se han
-verificado. Véase [la verificación de la versión](../../VERIFICACION_PUBLICACION.md).
+Para la instalación y las actualizaciones, consulta [INSTALACION.md](../../INSTALACION.md).
