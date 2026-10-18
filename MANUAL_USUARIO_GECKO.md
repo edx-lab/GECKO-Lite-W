@@ -678,9 +678,9 @@ Carga la paleta JSON y ejecuta hola.js. Comprueba legibilidad y salida con B2. S
 | ADC | Conversor para medir el divisor de batería. |
 | RTC / NTP | Reloj / sincronización de hora por red. |
 
-### Base documental
+### Referencias técnicas
 
-Inventario obtenido de esta copia local, no de una lista genérica de Bruce:
+Los siguientes archivos del repositorio permiten consultar los detalles de implementación:
 
 - [Menú principal](src/core/main_menu.cpp) y [categorías](src/core/menu_items).
 - [Controles y batería](src/gecko_interface.cpp), [pinout](boards/esp32-s3-n16r8/pins_arduino.h), [configuración de compilación](platformio.ini).
@@ -689,4 +689,4 @@ Inventario obtenido de esta copia local, no de una lista genérica de Bruce:
 - [Archivos](src/core/sd_functions.cpp), [temas](src/core/theme.cpp), [ajustes](src/core/settings.cpp), [scripts](src/modules/bjs_interpreter).
 - [Resumen del proyecto](GECKO.md).
 
-Esta edición cubre categorías y opciones de usuario identificadas, incluyendo grupos experimentales y funciones condicionadas. Las pruebas físicas, configuración guardada y versiones externas pueden cambiar el resultado observado.
+La disponibilidad y el comportamiento de algunas funciones dependen de la configuración del dispositivo, los periféricos conectados y los equipos con los que interactúa.
