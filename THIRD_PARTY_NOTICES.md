@@ -27,9 +27,9 @@ locales, el código incorporado y los recursos distribuidos con el proyecto.
 - Una dependencia declarada puede incluir código descartado por LTO y la
   eliminación de secciones. Los recursos de ejemplo y los
   controladores de otras placas se distribuyen como fuentes aunque no se usen.
-- Las revisiones Git exactas y versiones de compilación están fijadas en
-  [platformio.ini](platformio.ini). El manifiesto de publicación identifica
-  los 617 archivos de entrada conservados; no es un SBOM completo del SDK.
+- Las revisiones Git y las versiones de las dependencias están declaradas en
+  [platformio.ini](platformio.ini). Este inventario no sustituye los avisos y
+  licencias incluidos en cada dependencia o en el SDK.
 
 En las tablas, **conservar** se refiere al aviso de copyright, permiso,
 condiciones y descargo íntegros en el archivo de evidencia, no solo al nombre
@@ -120,13 +120,12 @@ que cada codec, ejemplo o función se haya retenido en el ejecutable final.
 | CYD táctil capacitivo / definiciones Sunton | Bruce y rzeldent según referencia en cabeceras; [Sunton](https://github.com/rzeldent/platformio-espressif32-sunton) | **Licencia no identificada para la copia y adaptaciones exactas** | `lib/CYD-touch/CYD28_TouchscreenC.*` y definiciones de pines R/C; conservar referencias; no inferir licencia del controlador resistivo |
 | Cabeceras mquickjs generadas | Fabrice Bellard, Charlie Gordon, Bruce; [fork fijado](https://github.com/BruceDevices/mquickjs/tree/169b5ea7723bf43d7be9631a14f9c2a1ed8c69e1) | MIT del generador y fuente mquickjs; `D/mquickjs/LICENSE`, cabecera de `mqjs_stdlib.c` | `lib/mquickjs_headers/`, `src/modules/bjs_interpreter/mqjs_stdlib.*`; conservar autores/permiso y firma de generación |
 
-### TFT_eSPI_QRcode: procedencia y alcance de la evidencia
+### TFT_eSPI_QRcode: autoría y licencias
 
 Ubicación: `lib/TFT_eSPI_QRcode/`. Incluida por Bruce en julio de 2024,
 [commit de incorporación](https://github.com/BruceDevices/firmware/commit/4647c9a0c246e1e0bab5173a95db7efc05dcda67).
-Los 13 archivos de GECKO coinciden por hash Git con la
-[copia oficial contrastada](https://github.com/BruceDevices/firmware/tree/a59213f3ec6cd302fa32c2042b2700c9c24d991a/lib/TFT_eSPI_QRcode).
-GECKO no ha modificado esta biblioteca.
+La biblioteca se conserva sin modificaciones respecto a la
+[copia incluida en Bruce](https://github.com/BruceDevices/firmware/tree/a59213f3ec6cd302fa32c2042b2700c9c24d991a/lib/TFT_eSPI_QRcode).
 
 | Parte / autores | Fuente y evidencia | Licencia / avisos |
 |---|---|---|
@@ -136,9 +135,8 @@ GECKO no ha modificado esta biblioteca.
 | Renderizador TFT de Domenico Silletti | [TFT_eSPI_QRcode](https://github.com/dsilletti/TFT_eSPI_QRcode); `README.md`, `library.json`, `library.properties` | **Licencia no identificada** para las aportaciones propias; conservar los tres autores declarados y referencias |
 | Adaptaciones de integración y memoria de Bruce | Historial oficial del directorio; adaptación a `tft_display` y gestión de `qrframe` | La licencia general de Bruce no resuelve las autorizaciones de las aportaciones de terceros anteriores |
 
-La biblioteca está enlazada en el mapa conservado (`frame.c.o`, `qrcode.cpp.o`,
-`qrencode.c.o`, símbolos `QRcode::create/init/render`). Atiende QRCodes, QR
-personalizados/guardados, PIX y la visualización de archivos como QR.
+La biblioteca se utiliza para generar y mostrar códigos QR, incluidos QR
+guardados y la visualización de archivos como QR.
 
 La biblioteca se distribuye como parte de la adaptación heredada de Bruce,
 con las atribuciones y condiciones particulares indicadas en la tabla.
@@ -207,11 +205,9 @@ del núcleo no se pueden aplicar indiscriminadamente a todos los componentes.
 | TinyUSB, libb64 y demás componentes auxiliares del core | [TinyUSB](https://github.com/hathach/tinyusb), autores de libb64 y del SDK | libb64: `F/cores/esp32/libb64/LICENSE`; TinyUSB y restantes: **Licencia no identificada para cada objeto del paquete exacto** en esta revisión. El nombre de un objeto no identifica su licencia |
 | Herramientas externas Python, Git, SCons, esptool, CMake/Ninja y acciones GitHub | Proyectos oficiales respectivos, descargados fuera del repositorio; referencias en workflow y paquetes | No se distribuyen sus instalaciones. Sus propias licencias/avisos deben conservarse si se empaquetan en el futuro; no quedan licenciados por AGPL de GECKO |
 
-El mapa de enlace contiene muchos archivos de bibliotecas SDK declarados por el
-core. Una línea `LOAD libX.a` solo acredita que el enlazador recibió el archivo;
-no acredita que retuviera código de esa biblioteca. **No se ha realizado una
-identificación exhaustiva, objeto por objeto, de las licencias del SDK
-precompilado.** El inventario no constituye un SBOM completo del SDK precompilado.
+Los paquetes precompilados del SDK incluyen componentes de distintas procedencias.
+Este inventario no enumera todas las licencias de sus objetos individuales;
+se deben consultar los avisos y condiciones correspondientes a cada paquete.
 
 ## 8. Alcance de las licencias
 
