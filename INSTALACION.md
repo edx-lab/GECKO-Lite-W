@@ -50,7 +50,7 @@ Al terminar se genera Gecko-esp32-s3-n16r8.bin en la raíz. Para crear un paquet
 python tools/package_release.py
 ```
 
-Los resultados se guardan en dist. El repositorio ignora los binarios de compilaciones locales: deben distribuirse como archivos de una Release o un artefacto de Actions. El flujo Gecko Lite W - build compila en Windows y Linux y adjunta los paquetes; no publica automáticamente una Release.
+Los paquetes generados se guardan en `dist/`. Los binarios de compilaciones locales no se incluyen en el repositorio de código; el paquete de instalación oficial se encuentra en [Releases](https://github.com/edx-lab/GECKO-Lite-W/releases).
 
 ## Archivos generados y herramientas adicionales
 
@@ -69,4 +69,4 @@ Los recursos de la SD son opcionales para arrancar. Para la intro coloca /boot.g
 - No aparece puerto: prueba cable de datos, otro USB y modo de descarga físico. Los controladores dependen del adaptador USB de tu placa.
 - Pantalla o botones distintos: verifica el pinout antes de atribuirlo a librerías.
 
-La compilación automática comprueba código y dependencias; las pruebas físicas se hacen en un Gecko compatible. No garantiza compatibilidad con cualquier placa ESP32.
+Utiliza una placa con la memoria y las conexiones indicadas en el [pinout de GECKO Lite W](boards/esp32-s3-n16r8/README.md); el firmware no es universal para todas las placas ESP32.
