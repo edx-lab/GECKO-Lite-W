@@ -12,8 +12,8 @@ Versión de lanzamiento: **v1.0.0**. El identificador interno del firmware es
 
 ## Descargar e instalar
 
-- **Para usarlo:** descarga `GECKO-Lite-W-v1.0.0-firmware.zip` y `SHA256SUMS.txt` de la Release v1.0.0. Incluye el binario completo, instrucciones y manual. Se carga en **0x0**. Las compilaciones de Actions tienen sus propios paquetes y checksums.
-- **Para compilarlo:** descarga `GECKO-Lite-W-v1.0.0-source.zip`, el archivo de fuentes de la etiqueta v1.0.0 o clona el repositorio completo. Abre la carpeta con platformio.ini en PlatformIO. Las dependencias externas se instalan automáticamente; las librerías modificadas de lib se incluyen en Git.
+- **Para instalarlo:** descarga `GECKO-Lite-W-v1.0.0-firmware.zip` y `SHA256SUMS.txt` desde la [Release v1.0.0](https://github.com/edx-lab/GECKO-Lite-W/releases/tag/v1.0.0). El paquete incluye los binarios, el manual y las instrucciones. El binario completo se escribe en **0x0**; consulta [INSTALACION.md](INSTALACION.md) antes de actualizar un equipo con ajustes guardados.
+- **Para compilarlo:** utiliza **Source code (zip)** o **Source code (tar.gz)** de esa misma Release, o clona el repositorio. Abre la carpeta que contiene `platformio.ini` en PlatformIO. Las dependencias externas se descargan al compilar y las bibliotecas locales están incluidas en `lib/`.
 
 Consulta [INSTALACION.md](INSTALACION.md) para instrucciones detalladas y comandos. Necesitas internet y Git al preparar dependencias desde el código. PlatformIO genera localmente la carpeta de trabajo `.pio/`.
 
@@ -36,13 +36,9 @@ python -m platformio run -e esp32-s3-n16r8
 python tools/package_release.py
 ```
 
-El binario completo se genera como Gecko-esp32-s3-n16r8.bin y el paquete distribuible en dist. El flujo de Actions hace una compilación desde cero en Windows y Linux y adjunta los paquetes; no publica automáticamente una Release.
+El binario completo se genera como `Gecko-esp32-s3-n16r8.bin` y el paquete distribuible en `dist/`. Las dependencias se definen en `platformio.ini`; los recursos web se generan localmente durante la compilación.
 
-Las revisiones externas están fijadas en platformio.ini. La web se genera localmente sin minificadores externos. Las cabeceras JavaScript generadas se incluyen para no exigir un compilador nativo al usuario que solo compila esta revisión sin modificar la API.
-
-**Compatibilidad de compilación:** verificada en Windows. El workflow también
-incluye Linux, cuya ejecución no está verificada. La validación física completa
-de todas las funciones no está acreditada. Consulta [la verificación de la versión](VERIFICACION_PUBLICACION.md).
+El entorno de compilación se ha probado en Windows. Para otras plataformas y para el uso en hardware distinto del descrito, consulta las instrucciones y los requisitos de compatibilidad.
 
 ## Créditos y licencia
 
