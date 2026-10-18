@@ -27,10 +27,9 @@ restantes utilizan la radio integrada del ESP32 y, cuando procede, la SD.
 - Joystick de cinco direcciones y dos botones adicionales.
 - Entrada ADC en GPIO 1 con divisor 100k/100k y buzzer en GPIO 38.
 
-`platformio.ini` contiene únicamente el entorno `esp32-s3-n16r8`, con flash de
-16 MB y PSRAM OPI de 8 MB. La configuración de placa, Docker y el workflow
-de compilación utilizan este entorno; no incluye perfiles de otras placas
-ni tablas de particiones de 4 u 8 MB.
+La configuración de [`platformio.ini`](platformio.ini) utiliza el entorno
+`esp32-s3-n16r8`, con 16 MB de flash y 8 MB de PSRAM OPI, y la tabla de
+particiones `custom_16Mb.csv`. No está preparada para placas con 4 u 8 MB de flash.
 
 El [pinout y los controles](boards/esp32-s3-n16r8/README.md) están implementados
 en `boards/esp32-s3-n16r8/`. La pantalla usa HSPI y la SD, FSPI. B1 y el centro
@@ -46,15 +45,7 @@ SD o no se puede abrir el GIF, el arranque continúa sin intro. La imagen
 de arranque se obtiene únicamente de `/boot.gif` en SD.
 La opción de arranque instantáneo sigue omitiendo la intro.
 
-## Compatibilidad y validación
-
-La compilación en Windows está verificada. El workflow de GitHub Actions incluye
-Windows y Linux; la ejecución de Linux no está verificada. Las cabeceras
-JavaScript incluidas permiten compilar esta versión sin instalar GCC nativo.
-No se acredita una validación física completa de todas las funciones.
-Consulta [la verificación de la versión](VERIFICACION_PUBLICACION.md).
-
-Consulta [instalación](INSTALACION.md) para compilar e instalar el firmware.
+Para instalar o compilar el firmware, consulta las [instrucciones de instalación](INSTALACION.md).
 
 ## Identidad Gecko
 
