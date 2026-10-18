@@ -12,16 +12,15 @@ Los hashes de las fuentes y los cuatro binarios están documentados en
 ## Descargas e instalación
 
 - `GECKO-Lite-W-v1.0.0-firmware.zip`: los cuatro binarios, sus checksums, manual, instrucciones y avisos de terceros.
-- `GECKO-Lite-W-v1.0.0-source.zip`: código fuente completo, configuración y bibliotecas locales correspondientes a esta versión.
-- `SHA256SUMS.txt`: hashes SHA-256 de ambos paquetes ZIP.
+- `SHA256SUMS.txt`: hash SHA-256 del paquete de firmware.
+- **Source code (zip)** y **Source code (tar.gz)**: archivos de fuentes generados automáticamente por GitHub a partir del tag `v1.0.0`.
 
 El paquete de firmware incluye su propio `SHA256SUMS.txt` para los cuatro
 binarios. Los nombres originales de los `.bin` se conservan.
 
-GitHub ofrece también archivos de fuentes ZIP y tar.gz de la etiqueta. El ZIP
-fuente adjunto contiene los mismos archivos del proyecto; no incluye
-dependencias externas descargadas ni herramientas adicionales. Permite
-verificar esta copia de distribución con el checksum adjunto.
+Los archivos de código fuente incluyen la configuración del proyecto, sus
+bibliotecas locales y la documentación. Las dependencias externas declaradas
+en `platformio.ini` se descargan al compilar y no están incluidas en esos archivos.
 
 El binario completo se escribe en **0x0**. Para actualizar una instalación con
 las mismas particiones conservando ajustes y calibración en NVS, utiliza
